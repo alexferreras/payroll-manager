@@ -1,0 +1,79 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<table style="border-collapse: collapse; width: 100%;">
+
+    <tr>
+        <td style="border: 1px solid #ddd;padding: 8px;text-align: left;" colspan="3" rowspan="3"><img
+                style=" width: 170px;height: 100%;" th:src="${logo}"/></td>
+        <th style="border: 1px solid #ddd;padding: 8px;text-align: left;"
+            th:text="'Comprobante de Pago ' + ${payrollData.getPeriod()}"/>
+    </tr>
+    <tr>
+        <th style="border: 1px solid #ddd;padding: 8px;text-align: left;" th:text="${payrollData.getFullName()}"/>
+    </tr>
+    <tr>
+        <th style="border: 1px solid #ddd;padding: 8px;text-align: left;" th:text="${payrollData.getFullName()}"/>
+    </tr>
+    <tr>
+        <td style="width: 100px; border: 1px solid #ddd;padding: 8px;text-align: left;"/>
+        <td style="width: 100px; border: 1px solid #ddd;padding: 8px;text-align: left;"/>
+        <td style="width: 100px; border: 1px solid #ddd;padding: 8px;text-align: left;"/>
+        <td style="width: 100px; border: 1px solid #ddd;padding: 8px;text-align: left;"/>
+        <th style="border: 1px solid #ddd;padding: 8px;text-align: center;" colspan="2">Descuentos</th>
+    </tr>
+    <tr>
+        <td style="width: 100px; border: 1px solid #ddd;padding: 8px;text-align: left;"/>
+        <td style="border: 1px solid #ddd;padding: 8px;text-align: center;">Salario bruto</td>
+        <td style="border: 1px solid #ddd;padding: 8px;text-align: left;" th:text="${payrollData.getGrossSalary()}"/>
+        <td style="width: 100px; border: 1px solid #ddd;padding: 8px;text-align: left;"/>
+        <td style="border: 1px solid #ddd;padding: 8px;text-align: left;">SFS</td>
+        <td style="border: 1px solid #ddd;padding: 8px;text-align: left;"
+            th:text="${payrollData.getSocialDiscountAmount()}"/>
+    </tr>
+    <tr>
+        <td style="width: 100px; border: 1px solid #ddd;padding: 8px;text-align: left;"/>
+        <td style="border: 1px solid #ddd;padding: 8px;text-align: left;">pago bruto</td>
+        <td style="border: 1px solid #ddd;padding: 8px;text-align: left;" th:text="${payrollData.getGrossSalary()}"/>
+        <td style="width: 100px; border: 1px solid #ddd;padding: 8px;text-align: left;"/>
+        <td style="border: 1px solid #ddd;padding: 8px;text-align: left;">AFP</td>
+        <td style="border: 1px solid #ddd;padding: 8px;text-align: left;"
+            th:text="${payrollData.getHealthDiscountAmount()}"/>
+    </tr>
+    <tr>
+        <td style="width: 100px; border: 1px solid #ddd;padding: 8px;text-align: left;"/>
+        <td style="width: 100px; border: 1px solid #ddd;padding: 8px;text-align: left;"/>
+        <td style="width: 100px; border: 1px solid #ddd;padding: 8px;text-align: left;"/>
+        <td style="width: 100px; border: 1px solid #ddd;padding: 8px;text-align: left;"/>
+        <td style="border: 1px solid #ddd;padding: 8px;text-align: left;">IRS</td>
+        <td style="border: 1px solid #ddd;padding: 8px;text-align: left;"
+            th:text="${payrollData.getTaxesDiscountAmount()}"/>
+    </tr>
+    <tr>
+        <td style="width: 100px; border: 1px solid #ddd;padding: 8px;text-align: left;"/>
+        <td style="width: 100px; border: 1px solid #ddd;padding: 8px;text-align: left;"/>
+        <td style="width: 100px; border: 1px solid #ddd;padding: 8px;text-align: left;"/>
+        <td style="width: 100px; border: 1px solid #ddd;padding: 8px;text-align: left;"/>
+        <td style="border: 1px solid #ddd;padding: 8px;text-align: left;">OTROS</td>
+        <td style="border: 1px solid #ddd;padding: 8px;text-align: left;"
+            th:text="${payrollData.getOtherDiscountAmount()}"/>
+    </tr>
+    <tr>
+        <td style="width: 100px; border: 1px solid #ddd;padding: 8px;text-align: left;"/>
+        <td style="width: 100px; border: 1px solid #ddd;padding: 8px;text-align: left;"/>
+        <td style="width: 100px; border: 1px solid #ddd;padding: 8px;text-align: left;"/>
+        <td style="width: 100px; border: 1px solid #ddd;padding: 8px;text-align: left;"/>
+        <td style="border: 1px solid #ddd;padding: 8px;text-align: left;">TOTAL</td>
+        <td style="border: 1px solid #ddd;padding: 8px;text-align: left;" th:text="${payrollData.getTotalDiscount()}"/>
+    </tr>
+    <tr>
+        <td style="width: 100px; border: 1px solid #ddd;padding: 8px;text-align: left;"/>
+        <td style="border: 1px solid #ddd;padding: 8px;text-align: left;">Pago Neto</td>
+        <td style="border: 1px solid #ddd;padding: 8px;text-align: left;" th:text="${payrollData.getNetPayment()}"/>
+        <td style="width: 100px; border: 1px solid #ddd;padding: 8px;text-align: left;"/>
+        <td style="width: 100px; border: 1px solid #ddd;padding: 8px;text-align: left;"/>
+        <td style="width: 100px; border: 1px solid #ddd;padding: 8px;text-align: left;"/>
+    </tr>
+</table>
+</body>
+</html>
