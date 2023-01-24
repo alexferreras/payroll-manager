@@ -92,27 +92,6 @@ public class PdfGeneratorServiceImpl implements PdfGeneratorService {
     }
 
 
-    private PdfPTable createTable(String country) {
-        // Add a table to the document
-        PdfPTable table = new PdfPTable(4);
-        table.setWidthPercentage(100);
-        // Add the header row
-        table.addCell(getHeaderCell("Nombre Completo", country));
-        table.addCell(getHeaderCell("Posición", country));
-        table.addCell(getHeaderCell("Salario Bruto", country));
-        table.addCell(getHeaderCell("Pago Neto", country));
-        return table;
-    }
-
-    private void addDataRowsToTable(List<PayrollData> payrollDataList, PdfPTable table) {
-        // Add the data rows
-        for (PayrollData payrollData : payrollDataList) {
-            table.addCell(payrollData.getFullName());
-            table.addCell(payrollData.getPosition());
-            table.addCell(String.valueOf(payrollData.getGrossSalary()));
-            table.addCell(String.valueOf(payrollData.getNetPayment()));
-        }
-    }
 
 
 }
